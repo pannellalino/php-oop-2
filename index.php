@@ -46,9 +46,9 @@ $food = array_filter($products, fn ($product) => get_class($product) == 'Food');
               <p class="card-text"><?php echo $product->brand ?> <br> &euro;<?php echo $product->price ?></p>
             </div>
             <ul class="list-group list-group-flush">
-              <?php foreach($product->foods as $food): ?>
-                <li class="list-group-item"><?php echo $food->ingredients ?></li>
-                <li class="list-group-item"><?php echo $food->typology ?></li>
+              <?php foreach($food as $item): ?>
+                <li class="list-group-item"><?php echo $item->ingredients ?></li>
+                <li class="list-group-item"><?php echo $item->typology ?></li>
               <?php endforeach; ?>
             </ul>
           </div>
