@@ -16,7 +16,10 @@ $products = [
   new Accessory(new Category('Cane'), 2, 'Giubbotto', 'Arcaplanet', 34, true, 'https://m.media-amazon.com/images/I/61vDr6pEqvL._AC_SL1500_.jpg', 'Giubbotto', 'Piume', 45)
 ];
 
-//var_dump($products);
+var_dump(get_class($products[0]));
+
+$food = array_filter($products, fn ($product) => get_class($product) == 'Food');
+
 
 ?>
 
