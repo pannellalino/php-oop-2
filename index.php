@@ -16,9 +16,11 @@ $products = [
   new Accessory(new Category('Cane'), 2, 'Giubbotto', 'Arcaplanet', 34, true, 'https://m.media-amazon.com/images/I/61vDr6pEqvL._AC_SL1500_.jpg', 'Giubbotto', 'Piume', 45)
 ];
 
-var_dump(get_class($products[0]));
+//var_dump(get_class($products[0]));
 
 $food = array_filter($products, fn ($product) => get_class($product) == 'Food');
+$toy = array_filter($products, fn ($product) => get_class($product) == 'Toy');
+$accessory = array_filter($products, fn ($product) => get_class($product) == 'Accessory');
 
 
 ?>
@@ -49,6 +51,14 @@ $food = array_filter($products, fn ($product) => get_class($product) == 'Food');
               <?php foreach($food as $item): ?>
                 <li class="list-group-item"><?php echo $item->ingredients ?></li>
                 <li class="list-group-item"><?php echo $item->typology ?></li>
+              <?php endforeach; ?>
+              <?php foreach($toy as $item): ?>
+                <li class="list-group-item"><?php echo $item->battery ?></li>
+                <li class="list-group-item"><?php echo $item->color ?></li>
+              <?php endforeach; ?>
+              <?php foreach($accessory as $item): ?>
+                <li class="list-group-item"><?php echo $item->utility ?></li>
+                <li class="list-group-item"><?php echo $item->material ?></li>
               <?php endforeach; ?>
             </ul>
           </div>
